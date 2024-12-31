@@ -1,0 +1,9 @@
+.contenedor-acercade-section3{
+
+    height: 100px;
+    width: 100vw;
+}
+
+.imagen-section3{
+    background-image: url('public/imgAcercaDe/img-quienes-somos.png');
+}
