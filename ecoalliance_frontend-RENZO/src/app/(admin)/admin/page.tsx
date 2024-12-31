@@ -3,6 +3,11 @@
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
+// Definir una interfaz para el token decodificado
+interface DecodedToken {
+  role: string;
+}
+
 const AdminPage = () => {
   const [userRole, setUserRole] = useState<string | null>(null);
   const router = useRouter();
@@ -21,7 +26,7 @@ const AdminPage = () => {
     }
 
     // Decodificar el token para obtener el rol del usuario
-    const decodedToken: any = JSON.parse(atob(token.split(".")[1]));
+    const decodedToken: DecodedToken = JSON.parse(atob(token.split(".")[1]));
     setUserRole(decodedToken.role);
 
     // Redirigir si el usuario no es admin

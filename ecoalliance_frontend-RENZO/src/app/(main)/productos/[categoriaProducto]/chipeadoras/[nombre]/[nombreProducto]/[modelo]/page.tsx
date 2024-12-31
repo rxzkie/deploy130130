@@ -1,8 +1,6 @@
 import { BsShop } from "react-icons/bs";
 import { RiErrorWarningLine } from "react-icons/ri";
 import { GoDownload } from "react-icons/go";
-import { IoIosArrowRoundForward } from "react-icons/io";
-import { IoIosArrowRoundBack } from "react-icons/io";
 import { BsTruck } from "react-icons/bs";
 
 import FormularioProducto from "@/components/formularios/FormularioProducto";

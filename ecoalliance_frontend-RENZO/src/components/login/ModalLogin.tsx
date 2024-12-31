@@ -72,11 +72,16 @@ const ModalLogin: React.FC<Props> = ({
         setOpenLogin(false);
         router.push("/"); // Redirigir al índice si es cliente
       }
-    } catch (error: any) {
-      console.error("Error al iniciar sesión:", error);
-      setErrorMessage(
-        error.message || "Error de red. Verifica tu conexión e intenta de nuevo."
-      );
+    } catch (error) {
+      // Actualizamos el tipo de error
+      if (error instanceof Error) {
+        console.error("Error al iniciar sesión:", error);
+        setErrorMessage(
+          error.message || "Error de red. Verifica tu conexión e intenta de nuevo."
+        );
+      } else {
+        setErrorMessage("Error desconocido. Intenta de nuevo.");
+      }
     }
   };
 

@@ -9,7 +9,7 @@ type Props = {
     openNavbar: boolean;
     setOpenNavbar:Dispatch<SetStateAction<boolean>>
   }
-const ModalNavbarResponsivo:React.FC<Props> = ({openNavbar,setOpenNavbar}) => {
+const ModalNavbarResponsivo:React.FC<Props> = ({openNavbar,}) => {
 
     const navLinks = [
         {"nombre":"INICIO","url":"/"},

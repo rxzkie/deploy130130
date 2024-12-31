@@ -19,6 +19,11 @@ interface ProductoData {
   imagen?: File;
 }
 
+// Definimos la interfaz para el token decodificado
+interface DecodedToken {
+  role: string;
+}
+
 const CrearProductoPage = () => {
   const [userRole, setUserRole] = useState<string | null>(null);
   const [categorias, setCategorias] = useState<Categoria[]>([]);
@@ -55,7 +60,7 @@ const CrearProductoPage = () => {
 
       try {
         const payload = token.split(".")[1];
-        const decodedToken: any = JSON.parse(atob(payload));
+        const decodedToken: DecodedToken = JSON.parse(atob(payload));
 
         if (decodedToken.role !== "ADMINISTRADOR") {
           alert("No tienes permisos para acceder a esta página.");
