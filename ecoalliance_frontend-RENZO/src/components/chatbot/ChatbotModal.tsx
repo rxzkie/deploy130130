@@ -3,7 +3,9 @@ import { io, Socket } from "socket.io-client";
 
 const ChatbotAssistant = () => {
   const [isOpen, setIsOpen] = useState(true); // Chat siempre visible
-  const [messages, setMessages] = useState<{ content: string; isBot: boolean }[]>([]);
+  const [messages, setMessages] = useState<{ content: string; isBot: boolean }[]>([
+    { content: "¡Hola! Hazme alguna pregunta. Por ejemplo: ¿Qué hacer con los restos de poda?", isBot: true }
+  ]);
   const [input, setInput] = useState('');
   const [isBotTyping, setIsBotTyping] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
